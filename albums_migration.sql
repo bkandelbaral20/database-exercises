@@ -10,10 +10,11 @@ DROP TABLE if EXISTS albums;
 -- genre — string for storing the record's genre(s)
 CREATE TABLE albums(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    artist VARCHAR(250) ,
-    name VARCHAR(100),
+    artist VARCHAR(250) DEFAULT 'Various Artists',
+    name VARCHAR(100) NOT NULL,
     release_date INT(4) ,
     sales FLOAT(9),
-    genre Varchar(350),
-    PRIMARY KEY (id)
+    genre Varchar(350) DEFAULT 'Bluegrass',
+    PRIMARY KEY (id),
+    UNIQUE (artist,name)
 );

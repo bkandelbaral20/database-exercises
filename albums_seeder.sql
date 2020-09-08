@@ -5,9 +5,11 @@ USE codeup_test_db;
 -- First write your queries as separate INSERT statements for each record and test. You should see no output.
 -- Refactor your script to use a single INSERT statement for all the records and test it again. Again, this should not
 -- generate any output.
+TRUNCATE albums;
 
-INSERT INTO albums (artist, name, content, release_date,genre,sales certification)
-VALUES ('Michael Jackson', 'Thriller', 1982, 'Pop, post-disco, funk, rock', 66),
+INSERT INTO albums (artist, name, release_date, genre,sales)
+VALUES
+       ('Michael Jackson', 'Thriller', 1982, 'Pop, post-disco, funk, rock', 66),
         ('AC/DC','Back in Black', 1980, 'Hard rock ', 50),
         ('Meat Loaf','Bat out of hell', 1977, 'Hard rock, glam rock, progressive rock', 50),
         ('Pink Floyd','The Dark Side of the Moon ', 1973, 'Progressive rock', 45),
@@ -28,8 +30,8 @@ VALUES ('Michael Jackson', 'Thriller', 1982, 'Pop, post-disco, funk, rock', 66),
 ', 32),
           ('Celine Dion	','Falling into You	', 1996	, 'Pop, soft rock
 ', 32),
-          ('Eagles', Hotel California	', 1976, 'Soft rock ', 32),
-          ('The Beatles	','Sgt. Pepper's Lonely Hearts Club Band	', 1967, 'rock
+          ('Eagles', 'Hotel California	', 1976, 'Soft rock ', 32),
+          ('The Beatles	','Sgt. Pepper''s Lonely Hearts Club Band	', 1967, 'rock
  ', 32),
           ('Various artists	','Dirty Dancing ', 1987, 'Pop, rock, R&B
 ', 32),
@@ -56,5 +58,4 @@ VALUES ('Michael Jackson', 'Thriller', 1982, 'Pop, post-disco, funk, rock', 66),
 ', 30),
           ('Santana	','Supernatural	', 1999, 'Latin rock
  ', 30),
-          ('Guns N'' Roses	','Appetite for Destruction	', 1987, 'Hard rock ', 30)
-      ;
+          ('Guns N'' Roses	','Appetite for Destruction	', 1987, 'Hard rock ', 30) ;
