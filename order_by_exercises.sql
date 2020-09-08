@@ -18,7 +18,7 @@ ORDER BY first_name , last_name ;
 # Change the order by clause so that you order by last name before first name. Your first result should still be
 # Irena Acton but now the last result should be Maya Zyda.
 
-SELECT first_name, last_name
+SELECT emp_no , first_name, last_name
 FROM employees
 where first_name in ('Irena', 'Vidya', 'Maya')
 ORDER BY last_name , first_name ;
@@ -26,7 +26,7 @@ ORDER BY last_name , first_name ;
 # Update your queries for employees with 'E' in their last name to sort the results by their employee number.
 # Your results should not change!
 
-SELECT  last_name , emp_no
+SELECT first_name , last_name
 FROM employees
 where last_name like '%E%'
 ORDER By emp_no, last_name ;
