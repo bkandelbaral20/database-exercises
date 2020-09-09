@@ -21,21 +21,31 @@ ORDER BY first_name , last_name ;
 SELECT emp_no , first_name, last_name
 FROM employees
 where first_name in ('Irena', 'Vidya', 'Maya')
-ORDER BY last_name , first_name ;
+ORDER BY last_name  , first_name  ;
 
 # Update your queries for employees with 'E' in their last name to sort the results by their employee number.
 # Your results should not change!
 
-SELECT first_name , last_name
-FROM employees
-where last_name like '%E%'
-ORDER By emp_no, last_name ;
-
-# Now reverse the sort order for both queries.
-SELECT  last_name , emp_no
+SELECT *
 FROM employees
 where last_name like 'E%'
-ORDER By  last_name desc , emp_no desc ;
+   OR last_name like '%E'
+ORDER By emp_no ;
+
+# Now reverse the sort order for both queries.
+SELECT *
+FROM employees
+WHERE first_name = 'Irena'
+   OR first_name = 'Vidya'
+   OR first_name = 'Maya'
+ORDER BY last_name DESC, first_name DESC;
+
+
+SELECT *
+FROM employees
+where last_name like 'E%'
+OR last_name like '%E'
+ORDER By   emp_no desc ;
 
 # Change the query for employees hired in the 90s and born on Christmas such that the first result is the
 # oldest employee who was hired last. It should be Khun Bernini.
