@@ -3,7 +3,9 @@
 -- Each ad is associated with the user that created it.
 -- An ad can be in one or more categories (for example, "help wanted", "giveaway", or "furniture")
 
-Create TABLE user(
+USE codeup_test_db;
+
+Create TABLE users(
 id INT UNSIGNED NOT NULL AUTO_INCREMENT,
 email varchar(50) NOT NUll,
 password varchar(20) NOt NULL,
@@ -16,11 +18,24 @@ CREATE TABLE ads (
     description TEXT NOT NULL,
     PRIMARY KEY (id)
 );
-
-CREATE table category(
+CREATE table categories(
  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
- categories varchar(200) NOT NULL,
+ description varchar(200) NOT NULL,
  primary key(id)
+);
+
+CREATE TABLE ads_users(
+ads_id INT UNSIGNED NOT NULL,
+    users_id INT UNSIGNED NOT NULL,
+    FOREIGN KEY (ads_id) REFERENCES ads(id),
+    FOREIGN KEY (users_id) REFERENCES users(id)
+);
+
+CREATE TABLE ads_categories(
+ads_id INT UNSIGNED NOT NULL,
+    categories_id INT UNSIGNED NOT NULL,
+    FOREIGN KEY (ads_id) REFERENCES ads(id),
+    FOREIGN KEY (categories_id) REFERENCES categories(id)
 );
 
 -- Write SQL queries to answer the following questions:**********************
